@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div>
+    <div class="app-top-bar">
       <v-app-bar dense color="green" dark>
         <v-hover open-delay="153">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
@@ -14,23 +14,27 @@
         <v-list nav dense>
           <v-list-item-group v-model="group" active-class="green--text text--lighten-2">
       
+            <router-link to="/">
             <v-list-item>
               <v-list-item-icon>
                 <v-icon>mdi-home</v-icon>
               </v-list-item-icon>
               <v-list-item-title>
-                Início
+                Home
               </v-list-item-title>
             </v-list-item>
+            </router-link>
 
+            <router-link to="/classificacao">
             <v-list-item>
               <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
+                <v-icon>mdi-soccer</v-icon>
               </v-list-item-icon>
               <v-list-item-title>
                 Classificação
               </v-list-item-title>
             </v-list-item>
+            </router-link>
 
           </v-list-item-group>
         </v-list>
@@ -50,3 +54,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .app-top-bar a {
+  text-decoration: none;
+  color: #000;
+}
+</style>
